@@ -8,7 +8,7 @@ class CdnFactoryTest extends PHPUnit_Framework_TestCase
 	public function testSimple()
 	{
 		$helper = Factory::factory('simple', array(
-			'htdocs' => __DIR__ . '/_files/simple/',
+			'public_dir' => __DIR__ . '/_files/simple/',
 		));
 		$this->assertInstanceOf('Twee\View\Helper\Cdn\Simple', $helper);
 	}
