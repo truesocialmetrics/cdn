@@ -28,7 +28,7 @@ class SimpleTest extends PHPUnit_Framework_TestCase
 	public function testReplaceAndHostname()
 	{
 		$helper = new CdnSimple(array(
-			'hostname'   => 'http://cdn.com',
+			'hostnames'  => array('http://cdn.com'),
 			'public_dir' => __DIR__ . '/_files/simple',
 		));
 		$filename = 'http://cdn.com/x.css?' . filemtime(__DIR__ . '/_files/simple/x.css');

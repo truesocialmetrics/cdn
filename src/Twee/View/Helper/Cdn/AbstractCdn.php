@@ -4,21 +4,24 @@ use Zend\Stdlib\AbstractOptions;
 
 abstract class AbstractCdn extends AbstractOptions
 {
-	private $hostname = '';
+	private $hostnames = array();
 
-	public function setHostname($hostname)
+	public function setHostnames(array $hostnames)
 	{
-		$this->hostname = $hostname;
+		$this->hostnames = $hostnames;
 	}
 
-	public function getHostname()
+	public function getHostnames()
 	{
-		return $this->hostname;
+		return $this->hostnames;
 	}
 
 	public function decorate($filename)
 	{
-		return $this->getHostName() . $filename;
+		$hostnames = $this->getHostnames();
+		if (empty($hostnames)) return $filename;
+
+		return $hostnames[crc32($filename) % count($hostnames)] . $filename;
 	}
 
 	abstract public function __invoke($filename);
