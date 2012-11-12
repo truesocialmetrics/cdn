@@ -1,17 +1,12 @@
 <?php
 namespace Twee\View\Helper\Cdn;
 
-class Release
+class Release extends AbstractCdn
 {
 	const RELEASE = 'release';
 	const SEPARATOR = '/';
 
 	private $release;
-
-	public function __construct($options)
-	{
-		$this->setRelease($options[self::RELEASE]);
-	}
 
 	public function setRelease($release)
 	{
@@ -32,6 +27,6 @@ class Release
 		array_unshift($items, $this->getRelease());
 		array_unshift($items, $type);
 		array_unshift($items, '');
-		return join(self::SEPARATOR, $items);
+		return $this->decorate(join(self::SEPARATOR, $items));
 	}
 }

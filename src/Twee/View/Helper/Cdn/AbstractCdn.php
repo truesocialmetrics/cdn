@@ -1,16 +1,17 @@
 <?php
 namespace Twee\View\Helper\Cdn;
+use Zend\Stdlib\AbstractOptions;
 
-abstract class AbstractCdn
+abstract class AbstractCdn extends AbstractOptions
 {
 	private $hostname = '';
 
-	public function setHostName($hostname)
+	public function setHostname($hostname)
 	{
 		$this->hostname = $hostname;
 	}
 
-	public function getHostName()
+	public function getHostname()
 	{
 		return $this->hostname;
 	}

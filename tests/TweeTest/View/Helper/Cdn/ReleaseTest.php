@@ -28,4 +28,13 @@ class ReleaseTest extends PHPUnit_Framework_TestCase
 		));
 		$this->assertEquals('x.css', $helper('x.css'));
 	}
+
+	public function testReleaseHost()
+	{
+		$helper = new CdnRelease(array(
+			'hostname' => 'http://cdn.com',
+			'release'  => '20121112064617',
+		));
+		$this->assertEquals('http://cdn.com/css/20121112064617/x.css', $helper('/css/x.css'));
+	}
 }

@@ -2,16 +2,11 @@
 namespace Twee\View\Helper\Cdn;
 use InvalidArgumentException;
 
-class Simple
+class Simple extends AbstractCdn
 {
 	const PUBLIC_DIR = 'public_dir';
 
 	protected $publicDir = '';
-
-	public function __construct(array $options)
-	{
-		$this->setPublicDir($options[self::PUBLIC_DIR]);
-	}
 
 	public function setPublicDir($dir)
 	{
@@ -27,6 +22,6 @@ class Simple
 	{
 		$path = $this->getPublicDir() . $filename;
 		if (!file_exists($path)) throw new InvalidArgumentException('File ' . $filename . ' not found');
-		return $filename . '?' . filemtime($path);
+		return $this->decorate($filename . '?' . filemtime($path));
 	}
 }
