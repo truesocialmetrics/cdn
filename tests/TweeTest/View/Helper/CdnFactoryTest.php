@@ -15,10 +15,10 @@ class CdnFactoryTest extends PHPUnit_Framework_TestCase
 
 	public function testRelease()
 	{
-		$helper = Factory::factory('release', array(
-			'release' => '20121112064617',
+		$helper = Factory::factory('simple', array(
+			'public_dir' => __DIR__ . '/_files/simple/',
 		));
-		$this->assertInstanceOf('Twee\View\Helper\Cdn\Release', $helper);
+		$this->assertInstanceOf('Twee\View\Helper\Cdn\Simple', $helper);
 	}
 
 	/**
