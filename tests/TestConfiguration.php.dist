@@ -1,2 +1,2 @@
 <?php
-define('ZF2_PATH', realpath(__DIR__ . '/../../vendor/zf2/library/'));
+define('ZF2_PATH', realpath(__DIR__ . '/../vendor/zendframework/zendframework/library/'));
