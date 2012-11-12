@@ -14,6 +14,13 @@ class AbstractCdnTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(array('http://cdn-0.com', 'http://cdn-1.com'), $helper->getHostnames());
 	}
 
+	public function testPublicDir()
+	{
+		$helper = new AbstractCdnTest\AbstractCdnImplementation(array());
+		$helper->setPublicDir(__DIR__);
+		$this->assertEquals(__DIR__, $helper->getPublicDir());
+	}
+
 	public function testDecorate()
 	{
 		$helper = new AbstractCdnTest\AbstractCdnImplementation(array());

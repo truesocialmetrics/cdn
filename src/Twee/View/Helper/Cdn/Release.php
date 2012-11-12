@@ -3,7 +3,6 @@ namespace Twee\View\Helper\Cdn;
 
 class Release extends AbstractCdn
 {
-	const RELEASE = 'release';
 	const SEPARATOR = '/';
 
 	private $release;
@@ -18,15 +17,20 @@ class Release extends AbstractCdn
 		return $this->release;
 	}
 
-	public function __invoke($filename)
+	protected function injectUniqueMarker($filename, $marker)
 	{
 		$items = explode(self::SEPARATOR, $filename);
 		array_shift($items);
 		if (count($items) <= 1) return $filename;
 		$type = array_shift($items);
-		array_unshift($items, $this->getRelease());
+		array_unshift($items, $marker);
 		array_unshift($items, $type);
 		array_unshift($items, '');
-		return $this->decorate(join(self::SEPARATOR, $items));
+		return join(self::SEPARATOR, $items);
+	}
+
+	public function __invoke($filename)
+	{
+		return $this->decorate($this->injectUniqueMarker($filename, $this->getRelease()));
 	}
 }

@@ -4,20 +4,6 @@ use InvalidArgumentException;
 
 class Simple extends AbstractCdn
 {
-	const PUBLIC_DIR = 'public_dir';
-
-	protected $publicDir = '';
-
-	public function setPublicDir($dir)
-	{
-		$this->publicDir = $dir;
-	}
-
-	public function getPublicDir()
-	{
-		return $this->publicDir;
-	}
-
 	public function __invoke($filename)
 	{
 		$path = $this->getPublicDir() . $filename;

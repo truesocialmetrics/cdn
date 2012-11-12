@@ -6,6 +6,8 @@ abstract class AbstractCdn extends AbstractOptions
 {
 	private $hostnames = array();
 
+	private $publicDir = '';
+
 	public function setHostnames(array $hostnames)
 	{
 		$this->hostnames = $hostnames;
@@ -14,6 +16,16 @@ abstract class AbstractCdn extends AbstractOptions
 	public function getHostnames()
 	{
 		return $this->hostnames;
+	}
+
+	public function setPublicDir($dir)
+	{
+		$this->publicDir = $dir;
+	}
+
+	public function getPublicDir()
+	{
+		return $this->publicDir;
 	}
 
 	public function decorate($filename)
