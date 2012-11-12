@@ -9,6 +9,9 @@ class CdnFactory
 		if ($name == 'simple') {
 			return new Cdn\Simple($options);
 		}
+		if ($name == 'release') {
+			return new Cdn\Release($options);
+		}
 		throw new InvalidArgumentException('Unknow exctention ' . $name);
 	}
 }

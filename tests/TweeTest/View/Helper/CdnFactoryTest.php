@@ -13,6 +13,14 @@ class CdnFactoryTest extends PHPUnit_Framework_TestCase
 		$this->assertInstanceOf('Twee\View\Helper\Cdn\Simple', $helper);
 	}
 
+	public function testRelease()
+	{
+		$helper = Factory::factory('release', array(
+			'release' => '20121112064617',
+		));
+		$this->assertInstanceOf('Twee\View\Helper\Cdn\Release', $helper);
+	}
+
 	/**
 	 * @expectedException \InvalidArgumentException
 	 */
