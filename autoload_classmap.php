@@ -4,4 +4,5 @@ return array(
     'Twee\View\Helper\Cdn\AbstractCdn' => __DIR__ . '/src/Twee/View/Helper/Cdn/AbstractCdn.php',
     'Twee\View\Helper\Cdn\Simple' => __DIR__ . '/src/Twee/View/Helper/Cdn/Simple.php',
     'Twee\View\Helper\Cdn\Release' => __DIR__ . '/src/Twee/View/Helper/Cdn/Release.php',
+    'Twee\Hash\Collector' => __DIR__ . '/src/Twee/Hash/Collector.php',
 );
