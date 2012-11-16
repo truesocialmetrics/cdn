@@ -1,7 +1,14 @@
 #!/usr/bin/env php
 <?php
-include_once __DIR__ . '/../autoload_register.php';
-include_once __DIR__ . '/../vendor/autoload.php';
+if (__DIR__ . '/../autoload_register.php') {
+	include_once __DIR__ . '/../autoload_register.php';
+}
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+	include_once __DIR__ . '/../vendor/autoload.php';
+}
+if (file_exists(__DIR__ . '/../autoload.php')) {
+	include_once __DIR__ . '/../autoload.php';
+}
 
 $collector = new Twee\Hash\Collector(__DIR__ . '/../../../public');
 $hashes = $collector->collect();
