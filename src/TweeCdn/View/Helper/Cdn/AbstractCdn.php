@@ -1,12 +1,26 @@
 <?php
 namespace TweeCdn\View\Helper\Cdn;
-use Zend\Stdlib\AbstractOptions;
+use Zend\Stdlib\AbstractOptions,
+	Zend\View\Helper\HelperInterface,
+	Zend\View\Renderer\RendererInterface;
 
-abstract class AbstractCdn extends AbstractOptions
+abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 {
 	private $hostnames = array();
 
 	private $publicDir = '';
+
+	private $view = null;
+
+	public function setView(RendererInterface $view)
+	{
+		$this->view = $view;
+	}
+
+	public function getView()
+	{
+		return $this->view;
+	}
 
 	public function setHostnames(array $hostnames)
 	{

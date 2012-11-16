@@ -1,12 +1,21 @@
 <?php
 namespace TweeCdnTest\View\Helper;
 use PHPUnit_Framework_TestCase,
+	Zend\View\Renderer\PhpRenderer as RendererPhpRenderer,
 	TweeCdn\View\Helper\Cdn\AbstractCdn as CdnAbstractCdn;
 
 include_once __DIR__ . '/_files/AbstractCdnImplementation.php';
 
 class AbstractCdnTest extends PHPUnit_Framework_TestCase
 {
+	public function testView()
+	{
+		$helper = new AbstractCdnTest\AbstractCdnImplementation(array());
+		$view = new RendererPhpRenderer();
+		$helper->setView($view);
+		$this->assertEquals($view, $helper->getView());
+	}
+
 	public function testHostnames()
 	{
 		$helper = new AbstractCdnTest\AbstractCdnImplementation(array());
