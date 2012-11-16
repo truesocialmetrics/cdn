@@ -1,7 +1,7 @@
 <?php
-namespace TweeTest\Hash;
+namespace TweeCdnTest\Hash;
 use PHPUnit_Framework_TestCase,
-	Twee\Hash\Collector as HashCollector;
+	TweeCdn\Hash\Collector as HashCollector;
 
 class CollectorTest extends PHPUnit_Framework_TestCase
 {

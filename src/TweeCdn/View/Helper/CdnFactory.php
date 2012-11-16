@@ -1,5 +1,5 @@
 <?php
-namespace Twee\View\Helper;
+namespace TweeCdn\View\Helper;
 use InvalidArgumentException;
 
 class CdnFactory

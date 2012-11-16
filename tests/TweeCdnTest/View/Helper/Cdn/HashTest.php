@@ -1,7 +1,7 @@
 <?php
-namespace TweeTest\View\Helper\Cdn;
+namespace TweeCdnTest\View\Helper\Cdn;
 use PHPUnit_Framework_TestCase,
-	Twee\View\Helper\Cdn\Hash as CdnHash;
+	TweeCdn\View\Helper\Cdn\Hash as CdnHash;
 
 class HashTest extends PHPUnit_Framework_TestCase
 {

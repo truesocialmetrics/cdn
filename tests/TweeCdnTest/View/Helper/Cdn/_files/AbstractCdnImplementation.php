@@ -1,6 +1,6 @@
 <?php
-namespace TweeTest\View\Helper\AbstractCdnTest;
-use Twee\View\Helper\Cdn\AbstractCdn as CdnAbstractCdn;
+namespace TweeCdnTest\View\Helper\AbstractCdnTest;
+use TweeCdn\View\Helper\Cdn\AbstractCdn as CdnAbstractCdn;
 
 class AbstractCdnImplementation extends CdnAbstractCdn
 {

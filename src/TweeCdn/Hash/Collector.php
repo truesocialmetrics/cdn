@@ -1,5 +1,5 @@
 <?php
-namespace Twee\Hash;
+namespace TweeCdn\Hash;
 use DirectoryIterator, RecursiveDirectoryIterator, RecursiveIteratorIterator;
 
 class Collector

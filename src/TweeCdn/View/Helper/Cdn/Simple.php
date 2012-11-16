@@ -1,5 +1,5 @@
 <?php
-namespace Twee\View\Helper\Cdn;
+namespace TweeCdn\View\Helper\Cdn;
 use InvalidArgumentException;
 
 class Simple extends AbstractCdn

@@ -1,7 +1,7 @@
 <?php
-namespace TweeTest\View\Helper\Cdn;
+namespace TweeCdnTest\View\Helper\Cdn;
 use PHPUnit_Framework_TestCase,
-	Twee\View\Helper\Cdn\Simple as CdnSimple;
+	TweeCdn\View\Helper\Cdn\Simple as CdnSimple;
 
 class SimpleTest extends PHPUnit_Framework_TestCase
 {

@@ -2,15 +2,15 @@
 return array(
 	'di' => array(
 		'definition' => array(
-			'Twee\View\Helper\Cdn' => array(
+			'TweeCdn\View\Helper\Cdn' => array(
 				'instantiator' => array(
-					'Twee\View\Helper\CdnFactory',
+					'TweeCdn\View\Helper\CdnFactory',
 					'factory',
 				),
 			),
 		),
         'instance' => array(
-            'Twee\\View\\Helper\\Cdn' => array(
+            'TweeCdn\\View\\Helper\\Cdn' => array(
                 'parameters' => array(
                 	// simple configuration
                 	'type'    => 'simple',
@@ -33,7 +33,7 @@ return array(
                 ),
             ),
             'alias' => array(
-                'Cdn' => 'Twee\\View\\Helper\\Cdn',
+                'Cdn' => 'TweeCdn\\View\\Helper\\Cdn',
             ),
         ),
     )

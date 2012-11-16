@@ -10,7 +10,7 @@ if (file_exists(__DIR__ . '/../autoload.php')) {
 	include_once __DIR__ . '/../autoload.php';
 }
 
-$collector = new Twee\Hash\Collector(__DIR__ . '/../../../public');
+$collector = new TweeCdn\Hash\Collector(__DIR__ . '/../../../public');
 $hashes = $collector->collect();
 
 $writer = new Zend\Config\Writer\PhpArray();

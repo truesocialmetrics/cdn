@@ -1,5 +1,5 @@
 <?php
-namespace Twee;
+namespace TweeCdn;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 

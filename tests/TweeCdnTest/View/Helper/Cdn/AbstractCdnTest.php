@@ -1,7 +1,7 @@
 <?php
-namespace TweeTest\View\Helper;
+namespace TweeCdnTest\View\Helper;
 use PHPUnit_Framework_TestCase,
-	Twee\View\Helper\Cdn\AbstractCdn as CdnAbstractCdn;
+	TweeCdn\View\Helper\Cdn\AbstractCdn as CdnAbstractCdn;
 
 include_once __DIR__ . '/_files/AbstractCdnImplementation.php';
 

@@ -1,5 +1,5 @@
 <?php
-namespace Twee\View\Helper\Cdn;
+namespace TweeCdn\View\Helper\Cdn;
 use Zend\Stdlib\AbstractOptions;
 
 abstract class AbstractCdn extends AbstractOptions

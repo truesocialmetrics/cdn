@@ -14,7 +14,7 @@
         }
     ],
     "bin": [
-        "bin/classmap_generator.php"
+        "bin/hash_collector.php"
     ],
     "require": {
         "php": ">=5.3.0",
@@ -22,8 +22,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Twee": "src/",
-            "TweeTest": "tests/"
+            "TweeCdn": "src/",
+            "TweeCdnTest": "tests/"
         }
     }
 }

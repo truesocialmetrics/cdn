@@ -1,8 +1,8 @@
 <?php
 return array(
-    'Twee\View\Helper\CdnFactory' => __DIR__ . '/src/Twee/View/Helper/CdnFactory.php',
-    'Twee\View\Helper\Cdn\AbstractCdn' => __DIR__ . '/src/Twee/View/Helper/Cdn/AbstractCdn.php',
-    'Twee\View\Helper\Cdn\Simple' => __DIR__ . '/src/Twee/View/Helper/Cdn/Simple.php',
-    'Twee\View\Helper\Cdn\Release' => __DIR__ . '/src/Twee/View/Helper/Cdn/Release.php',
-    'Twee\Hash\Collector' => __DIR__ . '/src/Twee/Hash/Collector.php',
+    'TweeCdn\View\Helper\CdnFactory' => __DIR__ . '/src/TweeCdn/View/Helper/CdnFactory.php',
+    'TweeCdn\View\Helper\Cdn\AbstractCdn' => __DIR__ . '/src/TweeCdn/View/Helper/Cdn/AbstractCdn.php',
+    'TweeCdn\View\Helper\Cdn\Simple' => __DIR__ . '/src/TweeCdn/View/Helper/Cdn/Simple.php',
+    'TweeCdn\View\Helper\Cdn\Release' => __DIR__ . '/src/TweeCdn/View/Helper/Cdn/Release.php',
+    'TweeCdn\Hash\Collector' => __DIR__ . '/src/TweeCdn/Hash/Collector.php',
 );
