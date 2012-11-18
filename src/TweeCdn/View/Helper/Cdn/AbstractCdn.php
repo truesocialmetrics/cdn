@@ -24,7 +24,7 @@ abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 
 	public function setHostnames(array $hostnames)
 	{
-		$this->hostnames = $hostnames;
+		$this->hostnames = array_values($hostnames);
 	}
 
 	public function getHostnames()
