@@ -21,6 +21,15 @@ class CdnFactoryTest extends PHPUnit_Framework_TestCase
 		$this->assertInstanceOf('TweeCdn\View\Helper\Cdn\Simple', $helper);
 	}
 
+	public function testHash()
+	{
+		$helper = Factory::factory('hash', array(
+			'public_dir' => __DIR__ . '/_files/simple/',
+			'hashes' => array(),
+		));
+		$this->assertInstanceOf('TweeCdn\View\Helper\Cdn\Hash', $helper);
+	}
+
 	/**
 	 * @expectedException \InvalidArgumentException
 	 */

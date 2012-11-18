@@ -58,8 +58,104 @@ Enabling it in your `application.config.php`file.
     );
     ```
 #### Advanced configuration
-1. Simple (by default mode)
+type - cdn type
+public_dir - path to public dir
+hostnames - list available hostnames
+hashes - hash list (file_path => hash)
+
+1. Simple (default mode)
+    Simple adds ?timestamp marker to the end of file
+    Original
+    ```bash
+        /css/simple.css
+    ```
+    tranfromed to
+    ```bash
+        /css/simple.css?1353231966
+    ```
+    Configuration
+    ```php
+    <?php
+    return array(
+        'di' => array(
+            'instance' => array(
+                'TweeCdn\\View\\Helper\\AbstractCdn' => array(
+                    'parameters' => array(
+                        // simple configuration
+                        'type'    => 'simple',
+                        'options' => array('public_dir' => __DIR__ . '/../../../../public'),
+                    ),
+                ),
+            ),
+        ),
+    );
+    ```
 
 2. Release
+    Release based helper puts release number stored in file "/RELEASE" right after first folder name. As result you have unique path every release. (RELEASE file by default created by [Remote multi-server automation tool - Capistrano](http://capistranorb.com/))
+    Original
+    ```bash
+        /css/simple.css
+    ```
+    tranfromed to
+    ```bash
+        /css/1353231966/simple.css
+    ```
+    Configuration
+    ```php
+    <?php
+    return array(
+        'di' => array(
+            'instance' => array(
+                'TweeCdn\\View\\Helper\\AbstractCdn' => array(
+                    'parameters' => array(
+                        // simple configuration
+                        'release'    => 'release',
+                        'options' => array(
+                            'public_dir' => __DIR__ . '/../../../../public',
+                            'release' => trim(file_get_contents(__DIR__ . '/../../../../REVISION')),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+    );
+    ```
 
 3. Hash
+    Hash provides almost the same to "release" but uses unique file content hash. It can works in 2 mode:
+    * dynamic - when hashed generates in fly
+    * pre-compiled - by using existed hash map
+    For "pre-compiled" mode you can generate hash map files by using script. it creates tmp/hashes.php files list. Eventully it makes application faster because you make less IO disk by skiping files md5 calculation every request.
+    ```bash
+    vendor/bin/hash_collector.php
+
+    ```
+    Original
+    ```bash
+        /css/simple.css
+    ```
+    tranfromed to
+    ```bash
+        /css/72e7d8fb348a326251c37821d1b6bfe16ea69d6e/simple.css
+    ```
+    Configuration sample with fail-back protection of missed tmp/hashes.php file.
+    ```php
+    <?php
+    return array(
+        'di' => array(
+            'instance' => array(
+                'TweeCdn\\View\\Helper\\AbstractCdn' => array(
+                    'parameters' => array(
+                        // simple configuration
+                        'release'    => 'hash',
+                        'options' => array(
+                            'public_dir' => __DIR__ . '/../../../../public',
+                            'release' => (file_exists(__DIR__ . '/../tmp/hashes.php')) ? include __DIR__ . '/../tmp/hashes.php' : array(),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+    );
+    ```

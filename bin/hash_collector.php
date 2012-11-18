@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
-if (file_exists(__DIR__ . '/../../../../autoload.php')) {
-	include_once __DIR__ . '/../../../../autoload.php';
+if (file_exists(__DIR__ . '/../../../autoload.php')) {
+	include_once __DIR__ . '/../../../autoload.php';
 }
 
 $collector = new TweeCdn\Hash\Collector(__DIR__ . '/../../../../public');

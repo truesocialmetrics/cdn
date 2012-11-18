@@ -12,6 +12,9 @@ class CdnFactory
 		if ($name == 'release') {
 			return new Cdn\Release($options);
 		}
+		if ($name == 'hash') {
+			return new Cdn\Hash($options);
+		}
 		throw new InvalidArgumentException('Unknow exctention ' . $name);
 	}
 }
