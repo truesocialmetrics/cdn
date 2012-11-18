@@ -63,6 +63,8 @@ public_dir - path to public dir
 hostnames - list available hostnames
 hashes - hash list (file_path => hash)
 
+Options hostnames - support ALL cdn helpers.
+
 1. Simple (default mode)
     Simple adds ?timestamp marker to the end of file
     Original
@@ -139,7 +141,8 @@ hashes - hash list (file_path => hash)
     ```bash
         /css/72e7d8fb348a326251c37821d1b6bfe16ea69d6e/simple.css
     ```
-    Configuration sample with fail-back protection of missed tmp/hashes.php file.
+    Configuration sample with fail-back protection of missed tmp/hashes.php file and hostnames.
+    The files will be spreaded by cdn-0 and cdn-1 by random depends on filename.
     ```php
     <?php
     return array(
@@ -151,7 +154,8 @@ hashes - hash list (file_path => hash)
                         'release'    => 'hash',
                         'options' => array(
                             'public_dir' => __DIR__ . '/../../../../public',
-                            'release' => (file_exists(__DIR__ . '/../tmp/hashes.php')) ? include __DIR__ . '/../tmp/hashes.php' : array(),
+                            'hostnames' => array('http://cdn-0.coockieless.domain.com', 'http://cdn-1.coockieless.domain.com'),
+                            'hashes' => (file_exists(__DIR__ . '/../tmp/hashes.php')) ? include __DIR__ . '/../tmp/hashes.php' : array(),
                         ),
                     ),
                 ),
