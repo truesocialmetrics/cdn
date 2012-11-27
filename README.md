@@ -58,11 +58,11 @@ Enabling it in your `application.config.php`file.
     );
     ```
 #### Advanced configuration
-type - cdn type
-public_dir - path to public dir
-hostnames - list available hostnames
-hashes - hash list (file_path => hash)
-mapping - map specific to filepath to global CDNs: Google/NetDNA/MaxCDN
+* type - cdn type
+* public_dir - path to public dir
+* hostnames - list available hostnames
+* hashes - hash list (file_path => hash)
+* mapping - map specific to filepath to global CDNs: Google/NetDNA/MaxCDN
 
 Options hostnames - support ALL cdn helpers.
 
