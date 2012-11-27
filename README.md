@@ -1,6 +1,6 @@
 TweeCdn
 =======
-Version 1.0.0 Created by Rostislav Mykhajliw [![Build Status](https://secure.travis-ci.org/necromant2005/cdn.png?branch=master)](https://travis-ci.org/necromant2005/cdn)
+Version 1.0.1 Created by Rostislav Mykhajliw [![Build Status](https://secure.travis-ci.org/necromant2005/cdn.png?branch=master)](https://travis-ci.org/necromant2005/cdn)
 
 Introduction
 ------------
