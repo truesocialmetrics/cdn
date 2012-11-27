@@ -62,6 +62,7 @@ type - cdn type
 public_dir - path to public dir
 hostnames - list available hostnames
 hashes - hash list (file_path => hash)
+mapping - map specific to filepath to global CDNs: Google/NetDNA/MaxCDN
 
 Options hostnames - support ALL cdn helpers.
 
@@ -75,7 +76,7 @@ Options hostnames - support ALL cdn helpers.
     ```bash
         /css/simple.css?1353231966
     ```
-    Configuration
+    Configuration with mapping jquery to google CDN (https://developers.google.com/speed/libraries/devguide)
     ```php
     <?php
     return array(
@@ -85,7 +86,12 @@ Options hostnames - support ALL cdn helpers.
                     'parameters' => array(
                         // simple configuration
                         'type'    => 'simple',
-                        'options' => array('public_dir' => __DIR__ . '/../../../../public'),
+                        'options' => array(
+                            'public_dir' => __DIR__ . '/../../../../public',
+                            'mappings' => array(
+                                '/js/jquery.js' => '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'
+                            ),
+                        ),
                     ),
                 ),
             ),

@@ -4,8 +4,8 @@ use TweeCdn\View\Helper\Cdn\AbstractCdn as CdnAbstractCdn;
 
 class AbstractCdnImplementation extends CdnAbstractCdn
 {
-	public function __invoke($filename)
+	public function decorate($filename)
 	{
-		return $this->decorate($filename);
+		return $filename;
 	}
 }

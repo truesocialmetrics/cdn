@@ -29,8 +29,8 @@ class Release extends AbstractCdn
 		return join(self::SEPARATOR, $items);
 	}
 
-	public function __invoke($filename)
+	public function decorate($filename)
 	{
-		return $this->decorate($this->injectUniqueMarker($filename, $this->getRelease()));
+		return $this->injectUniqueMarker($filename, $this->getRelease());
 	}
 }

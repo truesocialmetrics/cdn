@@ -17,7 +17,7 @@ class Hash extends Release
 		return $this->hashes;
 	}
 
-	public function __invoke($filename)
+	public function decorate($filename)
 	{
 		$hashes = $this->getHashes();
 		if (array_key_exists($filename, $hashes)) {
@@ -25,6 +25,6 @@ class Hash extends Release
 		} else {
 			$marker = md5_file($this->getPublicDir() . $filename);
 		}
-		return $this->decorate($this->injectUniqueMarker($filename, $marker));
+		return $this->injectUniqueMarker($filename, $marker);
 	}
 }

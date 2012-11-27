@@ -4,10 +4,10 @@ use InvalidArgumentException;
 
 class Simple extends AbstractCdn
 {
-	public function __invoke($filename)
+	public function decorate($filename)
 	{
 		$path = $this->getPublicDir() . $filename;
 		if (!file_exists($path)) throw new InvalidArgumentException('File ' . $filename . ' not found');
-		return $this->decorate($filename . '?' . filemtime($path));
+		return $filename . '?' . filemtime($path);
 	}
 }

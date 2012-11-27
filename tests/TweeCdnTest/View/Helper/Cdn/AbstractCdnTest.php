@@ -37,19 +37,31 @@ class AbstractCdnTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(__DIR__, $helper->getPublicDir());
 	}
 
-	public function testDecorate()
+	public function testMappings()
+	{
+		$helper = new AbstractCdnTest\AbstractCdnImplementation(array());
+		$helper->setMappings(array(
+			'/a.css' => 'http://x.com/a.css',
+		));
+		$this->assertEquals(array(
+			'/a.css' => 'http://x.com/a.css',
+		), $helper->getMappings());
+	}
+
+	public function testInvoke()
 	{
 		$helper = new AbstractCdnTest\AbstractCdnImplementation(array());
 		$helper->setHostnames(array('http://cdn-0.com', 'http://cdn-1.com'));
-		$this->assertEquals('http://cdn-0.com/a.css', $helper->decorate('/a.css'));
-		$this->assertEquals('http://cdn-1.com/y.css', $helper->decorate('/y.css'));
+		$helper->setMappings(array('/x.css' => 'http://goo.gl/x-1.2.css'));
+		$this->assertEquals('http://cdn-0.com/a.css', $helper->__invoke('/a.css'));
+		$this->assertEquals('http://cdn-1.com/y.css', $helper->__invoke('/y.css'));
+		$this->assertEquals('http://goo.gl/x-1.2.css', $helper->__invoke('/x.css'));
 	}
 
-	public function testDecorateZeroHosts()
+	public function testInvokeZeroHosts()
 	{
 		$helper = new AbstractCdnTest\AbstractCdnImplementation(array());
 		$helper->setHostnames(array());
-		$this->assertEquals('/a.css', $helper->decorate('/a.css'));
-
+		$this->assertEquals('/a.css', $helper->__invoke('/a.css'));
 	}
 }
