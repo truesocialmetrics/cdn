@@ -57,6 +57,7 @@ Enabling it in your "application.config.php" file.
         // ...
     );
     ```
+
 #### Advanced configuration
 * type - cdn type
 * public_dir - path to public dir
