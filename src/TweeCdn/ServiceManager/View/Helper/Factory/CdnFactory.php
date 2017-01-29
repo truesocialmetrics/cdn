@@ -7,9 +7,9 @@ use Interop\Container\ContainerInterface;
 
 class CdnFactory
 {
-    public function __invoke(ContainerInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container)
     {
-        $config = $this->$serviceLocator->get('config')['di']['instance']['TweeCdn\View\Helper\Cdn'];
+        $config = $container->get('config')['di']['instance']['TweeCdn\View\Helper\Cdn'];
 
         return Factory::factory($config['parameters']['type'], $config['parameters']['options']);
     }
