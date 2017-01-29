@@ -7,9 +7,9 @@ use Zend\Stdlib\AbstractOptions,
 
 abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 {
-	private $hostnames = array();
+	private $hostnames = [];
 
-	private $mappings  = array();
+	private $mappings  = [];
 
 	private $publicDir = '';
 
@@ -20,7 +20,7 @@ abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 		$this->view = $view;
 	}
 
-	public function getView()
+	public function getView() : RendererInterface
 	{
 		return $this->view;
 	}
@@ -30,7 +30,7 @@ abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 		$this->hostnames = array_values($hostnames);
 	}
 
-	public function getHostnames()
+	public function getHostnames() : array
 	{
 		return $this->hostnames;
 	}
@@ -40,22 +40,22 @@ abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 		$this->mappings = $mappings;
 	}
 
-	public function getMappings()
+	public function getMappings() : array
 	{
 		return $this->mappings;
 	}
 
-	public function setPublicDir($dir)
+	public function setPublicDir(string $dir)
 	{
 		$this->publicDir = $dir;
 	}
 
-	public function getPublicDir()
+	public function getPublicDir() : string
 	{
 		return $this->publicDir;
 	}
 
-	public function __invoke($filename)
+	public function __invoke($filename) : string
 	{
 		// mappings global cdn like google-cdn for jquery
 		$mappings = $this->getMappings();

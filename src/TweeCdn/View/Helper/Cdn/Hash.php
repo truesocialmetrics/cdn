@@ -5,19 +5,19 @@ class Hash extends Release
 {
 	const SEPARATOR = '/';
 
-	private $hashes = array();
+	private $hashes = [];
 
 	public function setHashes(array $hashes)
 	{
 		$this->hashes = $hashes;
 	}
 
-	public function getHashes()
+	public function getHashes() : array
 	{
 		return $this->hashes;
 	}
 
-	public function decorate($filename)
+	public function decorate($filename) : string
 	{
 		$hashes = $this->getHashes();
 		if (array_key_exists($filename, $hashes)) {

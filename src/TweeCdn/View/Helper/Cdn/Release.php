@@ -5,19 +5,19 @@ class Release extends AbstractCdn
 {
 	const SEPARATOR = '/';
 
-	private $release;
+	private $release = '';
 
-	public function setRelease($release)
+	public function setRelease(string $release)
 	{
 		$this->release = $release;
 	}
 
-	public function getRelease()
+	public function getRelease() : string
 	{
 		return $this->release;
 	}
 
-	protected function injectUniqueMarker($filename, $marker)
+	protected function injectUniqueMarker(string $filename, string $marker) : string
 	{
 		$items = explode(self::SEPARATOR, $filename);
 		array_shift($items);
@@ -29,7 +29,7 @@ class Release extends AbstractCdn
 		return join(self::SEPARATOR, $items);
 	}
 
-	public function decorate($filename)
+	public function decorate($filename) : string
 	{
 		return $this->injectUniqueMarker($filename, $this->getRelease());
 	}

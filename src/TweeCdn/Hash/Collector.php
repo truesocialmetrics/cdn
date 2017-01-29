@@ -13,7 +13,7 @@ class Collector
 
 	public function collect()
 	{
-		$hashes = array();
+		$hashes = [];
 		foreach (new DirectoryIterator($this->path) as $folder) {
 			if ($folder->isDot()) continue;
 			if (!$folder->isDir()) continue;
