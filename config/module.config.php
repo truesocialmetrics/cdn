@@ -27,4 +27,9 @@ return [
             'cdn' => 'TweeCdn\View\Helper\Factory\CdnFactory',
         ],
     ],
+    'view_helpers' => [
+        'factories' => [
+            'cdn' => 'TweeCdn\View\Helper\Factory\CdnFactory',
+        ],
+    ],
 ];
