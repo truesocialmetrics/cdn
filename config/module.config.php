@@ -5,10 +5,15 @@ return [
             'TweeCdn\View\Helper\Cdn' => [
                 'parameters' => [
                     'type'    => 'simple',
+                    'options' => [
+                        'public_dir' => __DIR__ . '/../../../../public',
+                        'mappings'   => ['/css/static.css' => '/css/static-compiled-compressed.css'],
+                    ],
 
                     // 'type'    => 'release',
                     // 'options' => [
                     //     'release'  => '2017-01-01-11-11-11',
+                    //     'mappings'   => ['/css/static.css' => '/css/static-compiled-compressed.css'],
                     // ],
 
                     // 'type'    => 'hash',

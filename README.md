@@ -1,6 +1,6 @@
 TweeCdn
 =======
-Version 1.0.1 Created by Rostislav Mykhajliw [![Build Status](https://secure.travis-ci.org/necromant2005/cdn.png?branch=master)](https://travis-ci.org/necromant2005/cdn)
+Version 2.* Created by Rostislav Mykhajliw [![Build Status](https://secure.travis-ci.org/necromant2005/cdn.png?branch=master)](https://travis-ci.org/necromant2005/cdn)
 
 Introduction
 ------------
@@ -10,7 +10,9 @@ TweeCdn is a list of view helpers for support css/js/images links transformation
 Requirements
 ------------
 
-* [Zend Framework 2](https://github.com/zendframework/zf2) (latest master)
+* php >= 7
+* zendframework/zend-stdlib
+* zendframework/zend-view
 
 Features / Goals
 ----------------
@@ -33,7 +35,7 @@ Installation
 
     ```json
     "require": {
-        "necromant2005/cdn": "@dev",
+        "necromant2005/cdn": "*",
     }
     ```
 
@@ -83,7 +85,7 @@ Options hostnames - support ALL cdn helpers.
     return array(
         'di' => array(
             'instance' => array(
-                'TweeCdn\\View\\Helper\\AbstractCdn' => array(
+                'TweeCdn\View\Helper\Cdn' => array(
                     'parameters' => array(
                         // simple configuration
                         'type'    => 'simple',
@@ -116,7 +118,7 @@ Options hostnames - support ALL cdn helpers.
     return array(
         'di' => array(
             'instance' => array(
-                'TweeCdn\\View\\Helper\\AbstractCdn' => array(
+                'TweeCdn\View\Helper\Cdn' => array(
                     'parameters' => array(
                         // simple configuration
                         'release'    => 'release',
@@ -155,7 +157,7 @@ Options hostnames - support ALL cdn helpers.
     return array(
         'di' => array(
             'instance' => array(
-                'TweeCdn\\View\\Helper\\AbstractCdn' => array(
+                'TweeCdn\View\Helper\Cdn' => array(
                     'parameters' => array(
                         // simple configuration
                         'release'    => 'hash',
