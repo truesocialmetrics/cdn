@@ -9,7 +9,7 @@ class CdnFactory
 {
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {
-        $config = $this->$serviceLocator->get('config')['di']['instance']['TweeCdn\View\Helper\Cdn\AbstractCdn'];
+        $config = $this->$serviceLocator->get('config')['di']['instance']['TweeCdn\View\Helper\Cdn'];
 
         return CdnFactory::factory($config['parameters']['type'], $config['parameters']['options']);
     }

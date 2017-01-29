@@ -2,7 +2,7 @@
 return [
     'di' => [
         'instance' => [
-            'TweeCdn\View\Helper\Cdn\AbstractCdn' => [
+            'TweeCdn\View\Helper\Cdn' => [
                 'parameters' => [
                     'type'    => 'simple',
 
