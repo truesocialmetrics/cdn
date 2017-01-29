@@ -1,7 +1,7 @@
 <?php
-namespace TrueTest\View\Helper;
-use TweeCdn\Factory as Factory,
-    PHPUnit_Framework_TestCase;
+namespace TweeCdn\View\Helper\Cdn;
+
+use PHPUnit_Framework_TestCase;
 
 class FactoryTest extends PHPUnit_Framework_TestCase
 {

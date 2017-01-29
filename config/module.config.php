@@ -29,12 +29,12 @@ return [
     ],
     'service_manager' => [
         'factories' => [
-            'cdn' => 'TweeCdn\View\Helper\Factory\CdnFactory',
+            'cdn' => 'TweeCdn\ServiceManager\View\Helper\Factory\CdnFactory',
         ],
     ],
     'view_helpers' => [
         'factories' => [
-            'cdn' => 'TweeCdn\View\Helper\Factory\CdnFactory',
+            'cdn' => 'TweeCdn\ServiceManager\View\Helper\Factory\CdnFactory',
         ],
     ],
 ];

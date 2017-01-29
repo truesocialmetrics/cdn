@@ -1,7 +1,7 @@
 <?php
-namespace TweeCdn\View\Helper\Factory;
+namespace TweeCdn\ServiceManager\View\Helper\Factory;
 
-use TweeCdn\Factory as CdnFactory;
+use TweeCdn\View\Helper\Cdn\Factory as Factory;
 use Zend\ServiceManager\AbstractPluginManager;
 use Interop\Container\ContainerInterface;
 
@@ -11,6 +11,6 @@ class CdnFactory
     {
         $config = $this->$serviceLocator->get('config')['di']['instance']['TweeCdn\View\Helper\Cdn'];
 
-        return CdnFactory::factory($config['parameters']['type'], $config['parameters']['options']);
+        return Factory::factory($config['parameters']['type'], $config['parameters']['options']);
     }
 }
