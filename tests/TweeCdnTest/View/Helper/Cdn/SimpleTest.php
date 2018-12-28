@@ -1,9 +1,9 @@
 <?php
 namespace TweeCdnTest\View\Helper\Cdn;
-use PHPUnit_Framework_TestCase,
+use PHPUnit\Framework\TestCase,
 	TweeCdn\View\Helper\Cdn\Simple as CdnSimple;
 
-class SimpleTest extends PHPUnit_Framework_TestCase
+class SimpleTest extends TestCase
 {
 	public function testReplace()
 	{

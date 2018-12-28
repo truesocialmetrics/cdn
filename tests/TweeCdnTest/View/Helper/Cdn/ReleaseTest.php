@@ -1,9 +1,9 @@
 <?php
 namespace TrueTest\View\Helper;
-use PHPUnit_Framework_TestCase,
+use PHPUnit\Framework\TestCase,
 	TweeCdn\View\Helper\Cdn\Release as CdnRelease;
 
-class ReleaseTest extends PHPUnit_Framework_TestCase
+class ReleaseTest extends TestCase
 {
 	public function testRelease()
 	{

@@ -1,9 +1,9 @@
 {
-    "name": "necromant2005/cdn",
+    "name": "truesocialmetrics/cdn",
     "type": "library",
-    "description": "Cdn service for ZF2/ZF3",
-    "keywords": ["cdn","zf2", "zf3"],
-    "homepage": "https://github.com/necromant2005/cdn.git",
+    "description": "Cdn helper for ZF2/ZF3",
+    "keywords": ["cdn", "content", "delivery", "helper", "zendframework"],
+    "homepage": "https://github.com/truesocialmetrics/cdn",
     "license": "MIT",
     "authors": [
         {

@@ -1,12 +1,12 @@
 <?php
 namespace TweeCdnTest\View\Helper;
-use PHPUnit_Framework_TestCase,
+use PHPUnit\Framework\TestCase,
 	Zend\View\Renderer\PhpRenderer as RendererPhpRenderer,
 	TweeCdn\View\Helper\Cdn\AbstractCdn as CdnAbstractCdn;
 
 include_once __DIR__ . '/_files/AbstractCdnImplementation.php';
 
-class AbstractCdnTest extends PHPUnit_Framework_TestCase
+class AbstractCdnTest extends TestCase
 {
 	public function testView()
 	{

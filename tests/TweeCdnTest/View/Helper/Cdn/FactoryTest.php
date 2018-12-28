@@ -1,9 +1,9 @@
 <?php
 namespace TweeCdn\View\Helper\Cdn;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class FactoryTest extends PHPUnit_Framework_TestCase
+class FactoryTest extends TestCase
 {
     public function testSimple()
     {

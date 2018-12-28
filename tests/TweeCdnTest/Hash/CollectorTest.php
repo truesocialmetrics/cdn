@@ -1,9 +1,9 @@
 <?php
 namespace TweeCdnTest\Hash;
-use PHPUnit_Framework_TestCase,
+use PHPUnit\Framework\TestCase,
 	TweeCdn\Hash\Collector as HashCollector;
 
-class CollectorTest extends PHPUnit_Framework_TestCase
+class CollectorTest extends TestCase
 {
 	public function testConstaruct()
 	{
