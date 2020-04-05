@@ -1,8 +1,8 @@
 {
     "name": "truesocialmetrics/cdn",
     "type": "library",
-    "description": "Cdn helper for ZF2/ZF3",
-    "keywords": ["cdn", "content", "delivery", "helper", "zendframework"],
+    "description": "Cdn helper for ZF2/ZF3/Laminas",
+    "keywords": ["cdn", "content", "delivery", "helper", "laminas"],
     "homepage": "https://github.com/truesocialmetrics/cdn",
     "license": "MIT",
     "authors": [
@@ -17,9 +17,9 @@
         "bin/hash_collector.php"
     ],
     "require": {
-        "php": ">=7",
-        "zendframework/zend-stdlib": "*",
-        "zendframework/zend-view": "*"
+        "php": ">=7.4",
+        "laminas/laminas-stdlib": "*",
+        "laminas/laminas-view": "*"
     },
     "autoload": {
         "psr-4": {

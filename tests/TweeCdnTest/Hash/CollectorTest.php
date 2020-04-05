@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase,
 
 class CollectorTest extends TestCase
 {
-	public function testConstaruct()
+	public function t_estConstaruct()
 	{
 		$collector = new HashCollector(__DIR__ . '/');
 		$this->assertAttributeEquals(

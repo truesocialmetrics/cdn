@@ -11,7 +11,7 @@ class Collector
 		$this->path = rtrim($path, DIRECTORY_SEPARATOR);
 	}
 
-	public function collect()
+	public function collect() : array
 	{
 		$hashes = [];
 		foreach (new DirectoryIterator($this->path) as $folder) {

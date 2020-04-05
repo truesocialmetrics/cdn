@@ -14,11 +14,9 @@ class SimpleTest extends TestCase
 		$this->assertEquals($filename, $helper->__invoke('/x.css'));
 	}
 
-	/**
-	 * @expectedException \InvalidArgumentException
-	 */
 	public function testInvalid()
 	{
+		$this->expectException(\InvalidArgumentException::class);
 		$helper = new CdnSimple(array(
 			'public_dir' => __DIR__ . '/_files/simple',
 		));

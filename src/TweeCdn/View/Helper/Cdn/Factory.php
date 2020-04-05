@@ -18,6 +18,6 @@ class Factory
          return new Hash($options);
      }
 
-     throw new InvalidArgumentException('Unknow exctention ' . $name);
+     throw new InvalidArgumentException('Unknow extension ' . $name);
     }
 }

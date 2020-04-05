@@ -5,9 +5,9 @@ class Hash extends Release
 {
 	const SEPARATOR = '/';
 
-	private $hashes = [];
+	private array $hashes = [];
 
-	public function setHashes(array $hashes)
+	public function setHashes(array $hashes) : void
 	{
 		$this->hashes = $hashes;
 	}
@@ -17,7 +17,7 @@ class Hash extends Release
 		return $this->hashes;
 	}
 
-	public function decorate($filename) : string
+	public function decorate(string $filename) : string
 	{
 		$hashes = $this->getHashes();
 		if (array_key_exists($filename, $hashes)) {

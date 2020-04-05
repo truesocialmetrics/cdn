@@ -30,11 +30,9 @@ class FactoryTest extends TestCase
         $this->assertInstanceOf('TweeCdn\View\Helper\Cdn\Hash', $helper);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testLoadUnknown()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $helper = Factory::factory('non-exists', array());
     }
 }

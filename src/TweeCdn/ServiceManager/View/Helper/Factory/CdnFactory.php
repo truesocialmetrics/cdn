@@ -2,7 +2,7 @@
 namespace TweeCdn\ServiceManager\View\Helper\Factory;
 
 use TweeCdn\View\Helper\Cdn\Factory as Factory;
-use Zend\ServiceManager\AbstractPluginManager;
+use Laminas\ServiceManager\AbstractPluginManager;
 use Interop\Container\ContainerInterface;
 
 class CdnFactory

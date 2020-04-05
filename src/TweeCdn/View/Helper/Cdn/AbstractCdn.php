@@ -1,21 +1,21 @@
 <?php
 namespace TweeCdn\View\Helper\Cdn;
-use Zend\Stdlib\AbstractOptions,
-	Zend\View\Helper\HelperInterface,
-	Zend\View\Renderer\RendererInterface,
+use Laminas\Stdlib\AbstractOptions,
+	Laminas\View\Helper\HelperInterface,
+	Laminas\View\Renderer\RendererInterface,
 	InvalidArgumentException;
 
 abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 {
-	private $hostnames = [];
+	private array $hostnames = [];
 
-	private $mappings  = [];
+	private array $mappings  = [];
 
-	private $publicDir = '';
+	private string $publicDir = '';
 
 	private $view = null;
 
-	public function setView(RendererInterface $view)
+	public function setView(RendererInterface $view) : void
 	{
 		$this->view = $view;
 	}
@@ -25,7 +25,7 @@ abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 		return $this->view;
 	}
 
-	public function setHostnames(array $hostnames)
+	public function setHostnames(array $hostnames) : void
 	{
 		$this->hostnames = array_values($hostnames);
 	}
@@ -35,7 +35,7 @@ abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 		return $this->hostnames;
 	}
 
-	public function setMappings(array $mappings)
+	public function setMappings(array $mappings) : void
 	{
 		$this->mappings = $mappings;
 	}
@@ -55,7 +55,7 @@ abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 		return $this->publicDir;
 	}
 
-	public function __invoke($filename) : string
+	public function __invoke(string $filename) : string
 	{
 		// mappings global cdn like google-cdn for jquery
 		$mappings = $this->getMappings();
@@ -72,6 +72,6 @@ abstract class AbstractCdn extends AbstractOptions implements HelperInterface
 		return $hostnames[crc32($filename) % count($hostnames)] . $filename;
 	}
 
-	abstract public function decorate($filename);
+	abstract public function decorate(string $filename) : string;
 
 }
