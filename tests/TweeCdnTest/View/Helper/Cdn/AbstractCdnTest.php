@@ -1,7 +1,7 @@
 <?php
 namespace TweeCdnTest\View\Helper;
 use PHPUnit\Framework\TestCase,
-	Zend\View\Renderer\PhpRenderer as RendererPhpRenderer,
+	Laminas\View\Renderer\PhpRenderer as RendererPhpRenderer,
 	TweeCdn\View\Helper\Cdn\AbstractCdn as CdnAbstractCdn;
 
 include_once __DIR__ . '/_files/AbstractCdnImplementation.php';
