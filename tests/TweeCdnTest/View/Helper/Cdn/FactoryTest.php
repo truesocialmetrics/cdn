@@ -30,6 +30,16 @@ class FactoryTest extends TestCase
         $this->assertInstanceOf('TweeCdn\View\Helper\Cdn\Hash', $helper);
     }
 
+    public function testHashFile()
+    {
+        $helper = Factory::factory('hash_file', array(
+            'public_dir' => __DIR__ . '/_files/simple/',
+            'filename' => __DIR__ . '/_files/hashes.php',
+        ));
+        $this->assertInstanceOf('TweeCdn\View\Helper\Cdn\HashFile', $helper);
+    }
+
+
     public function testLoadUnknown()
     {
         $this->expectException(\InvalidArgumentException::class);

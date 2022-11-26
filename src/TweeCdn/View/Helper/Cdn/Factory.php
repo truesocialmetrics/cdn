@@ -17,6 +17,9 @@ class Factory
      if ($name == 'hash') {
          return new Hash($options);
      }
+     if ($name == 'hash_file') {
+         return new HashFile($options);
+     }
 
      throw new InvalidArgumentException('Unknow extension ' . $name);
     }
